@@ -5,6 +5,7 @@
 *.pem
 *.p12
 *.pfx
+*.txt
 
 # Claude Code machine-local configuration
 .claude/settings.local.json
