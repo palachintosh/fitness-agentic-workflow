@@ -11,6 +11,23 @@ retries, MCP integration, deterministic approval, hooks, and resumable state.
 > This project provides general fitness information, not diagnosis, treatment,
 > or medical care. It does not replace guidance from a qualified professional.
 
+## Example Output
+
+The workflow produces a self-contained HTML fitness guide with a consistent,
+responsive, and printable layout.
+
+### Program overview and navigation
+
+![Generated fitness program overview with plan summary and contents](./docs/screen_1.png)
+
+### Weekly schedule and training sessions
+
+![Generated weekly training schedule and the beginning of a detailed session](./docs/screen_2.png)
+
+### Progress goals and interpretation
+
+![Generated twelve-week success goals and progress interpretation](./docs/screen_3.png)
+
 ## Prerequisites
 
 - Git
