@@ -4,7 +4,7 @@ description: Researches authoritative precautions for disclosed health, pain, in
 tools: Read, Write, Edit, WebSearch, WebFetch
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 ---

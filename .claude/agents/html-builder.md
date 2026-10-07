@@ -4,7 +4,7 @@ description: Renders a validated and explicitly approved fitness-plan candidate 
 tools: Read, Write, Edit
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - fitness-html-theme-builder
 ---

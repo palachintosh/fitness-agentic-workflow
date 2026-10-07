@@ -4,7 +4,7 @@ description: Validates fitness workflow artifacts against structural, traceabili
 tools: Read, Write, Edit, Glob, Grep
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 ---
@@ -26,6 +26,7 @@ The coordinator must give you:
 
 - the repository-relative run directory, such as `runs/<run-id>/`;
 - validation mode: `pre_synthesis` or `final_candidate`;
+- for `final_candidate`, the coordinator-computed SHA-256 of the candidate;
 - the current date and validation attempt number;
 - the selected-agent manifest and expected artifact paths;
 - the maximum retry count and current retry counts;
@@ -199,6 +200,7 @@ Write the current report in `validation.md` using exactly this structure:
 - Updated: YYYY-MM-DD
 - Attempt: <number>
 - Retry limit: <number>
+- Candidate SHA-256: <lowercase SHA-256 in final_candidate mode, or n/a>
 
 ### Gate Results
 

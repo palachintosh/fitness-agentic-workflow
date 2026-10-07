@@ -4,7 +4,7 @@ description: Researches sourced exercise candidates that match confirmed fitness
 tools: Read, Write, Edit, WebSearch, WebFetch, mcp__wger__*
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 mcpServers:
