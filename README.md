@@ -33,28 +33,33 @@ git clone <repository-url>
 cd fitness-agentic-workflow
 ```
 
-Create the local environment file:
+Create the machine-local Claude settings file:
 
 ```bash
-cp .env.example .env
+cp .claude/settings.local.json.example .claude/settings.local.json
 ```
 
-Replace the example value in `.env` with your wger key:
+Replace the example value in `.claude/settings.local.json` with your wger key:
 
-```dotenv
-WGER_API_KEY=your-real-key
+```json
+{
+  "env": {
+    "WGER_API_KEY": "your-real-key"
+  },
+  "enabledMcpjsonServers": [
+    "wger"
+  ]
+}
 ```
 
-The `.env` file is ignored by Git. Do not put the key directly in `.mcp.json`,
-`.claude/settings.json`, an artifact, or a committed shell script.
+`.claude/settings.local.json` is ignored by Git and merged with the committed
+project settings. Do not put the key directly in `.mcp.json`,
+`.claude/settings.json`, an artifact, or a committed shell script. The committed
+example contains only a placeholder.
 
-Export the variables before launching Claude Code. Claude Code does not need to
-read the `.env` file itself:
+Launch Claude Code normally from the repository root:
 
 ```bash
-set -a
-source .env
-set +a
 claude
 ```
 
@@ -243,9 +248,9 @@ when the command or its directory was first created, restart Claude Code.
 
 ### wger is disconnected or the equipment stage is blocked
 
-Confirm that `uvx` is installed, `WGER_API_KEY` is exported in the shell that
-started Claude Code, and `/mcp` reports the `wger` server as connected. Restart
-Claude Code after changing environment variables.
+Confirm that `uvx` is installed, `.claude/settings.local.json` contains a real
+`WGER_API_KEY`, and `/mcp` reports the `wger` server as connected. Restart Claude
+Code after changing local settings.
 
 ### A final HTML write is denied
 
@@ -276,7 +281,7 @@ the run and let the coordinator reconcile the artifact before continuing.
 └── settings.json           # Permissions, sandbox, environment, and hooks
 hooks/                      # Deterministic Python hook implementations
 runs/                       # Persisted and sample workflow runs
-.env.example                # Required environment variable names only
+.claude/settings.local.json.example # Local MCP environment template
 .mcp.json                   # Project-scoped wger MCP configuration
 CLAUDE.md                   # Workflow-wide contract
 README.md                   # Setup and operating guide

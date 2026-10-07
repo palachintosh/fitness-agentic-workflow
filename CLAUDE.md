@@ -215,9 +215,9 @@ for external fitness data. Prefer primary or authoritative sources. Record the
 source URL, access date, relevant finding, and affected recommendation.
 
 The project-scoped `.mcp.json` configures the wger server for exercise and
-equipment data. Required environment variables are documented in `.env.example`
-and must be exported before Claude Code starts. Do not invent MCP results or
-claim that a server was called when it was not.
+equipment data. Copy `.claude/settings.local.json.example` to the ignored
+`.claude/settings.local.json` and place the required `WGER_API_KEY` there. Do not
+invent MCP results or claim that a server was called when it was not.
 
 ## Safety Rules
 
