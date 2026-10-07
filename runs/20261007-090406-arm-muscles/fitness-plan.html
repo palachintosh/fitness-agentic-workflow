@@ -1,0 +1,1739 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personalized Fitness Program: 12-Week Arm Strength Building</title>
+  <style>
+    :root {
+      --color-primary: #2d5a3d;
+      --color-secondary: #4a7c59;
+      --color-accent: #6fa86e;
+      --color-light: #f5f7f6;
+      --color-border: #d1d9d7;
+      --color-text: #1a1a1a;
+      --color-text-light: #666;
+      --color-success: #2d8659;
+      --color-warning: #c85a3a;
+      --color-error: #d32f2f;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --line-height: 1.6;
+      --max-width: 72rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: var(--line-height);
+      color: var(--color-text);
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: #fff;
+      padding: var(--spacing-xl) var(--spacing-md);
+      text-align: center;
+    }
+
+    header.hero h1 {
+      margin: 0 0 var(--spacing-md) 0;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    header.hero .overview {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 60rem;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    header.hero .overview p {
+      margin: var(--spacing-sm) 0;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    main#main-content {
+      padding-top: var(--spacing-xl);
+    }
+
+    section {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+      padding-bottom: var(--spacing-sm);
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+    }
+
+    p {
+      margin: var(--spacing-md) 0;
+    }
+
+    ul, ol {
+      margin: var(--spacing-md) 0;
+      padding-left: 2rem;
+    }
+
+    li {
+      margin: var(--spacing-sm) 0;
+    }
+
+    /* Table of Contents */
+    nav#toc {
+      background-color: var(--color-light);
+      border-left: 4px solid var(--color-primary);
+      padding: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+      border-radius: var(--radius-md);
+    }
+
+    nav#toc h2 {
+      font-size: 1.3rem;
+      border: none;
+      padding-bottom: 0;
+      margin-top: 0;
+    }
+
+    nav#toc ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--spacing-md) 0 0 0;
+    }
+
+    nav#toc li {
+      margin: var(--spacing-xs) 0;
+    }
+
+    nav#toc a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav#toc a:hover,
+    nav#toc a:focus {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    /* Safety Callout */
+    section.callout.safety {
+      background-color: #fef5f5;
+      border-left: 4px solid var(--color-warning);
+      padding: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+      border-radius: var(--radius-md);
+    }
+
+    section.callout.safety h2 {
+      color: var(--color-warning);
+      border-color: var(--color-warning);
+      margin-top: 0;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-md) 0;
+      font-size: 0.95rem;
+    }
+
+    table thead {
+      background-color: var(--color-primary);
+      color: #fff;
+    }
+
+    table th {
+      padding: var(--spacing-sm);
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid var(--color-border);
+    }
+
+    table td {
+      padding: var(--spacing-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: var(--color-light);
+    }
+
+    table tbody tr:hover {
+      background-color: #f0f5f2;
+    }
+
+    /* Session Cards */
+    .session-card {
+      background-color: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      page-break-inside: avoid;
+    }
+
+    .session-card h3 {
+      margin-top: 0;
+      color: var(--color-primary);
+    }
+
+    .session-card > table {
+      font-size: 0.9rem;
+    }
+
+    /* Links */
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-light);
+      border-top: 1px solid var(--color-border);
+      padding: var(--spacing-lg) var(--spacing-md);
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      text-align: center;
+      margin-top: var(--spacing-xl);
+    }
+
+    footer p {
+      margin: var(--spacing-sm) 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header.hero h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      .container {
+        padding: var(--spacing-md);
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      table th,
+      table td {
+        padding: var(--spacing-xs);
+      }
+
+      nav#toc {
+        padding: var(--spacing-md);
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #fff;
+        font-size: 11pt;
+        line-height: 1.5;
+      }
+
+      header.hero {
+        background: none;
+        color: var(--color-primary);
+        border-bottom: 2px solid var(--color-primary);
+        page-break-after: avoid;
+      }
+
+      header.hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: var(--spacing-md);
+      }
+
+      h2 {
+        page-break-after: avoid;
+        color: var(--color-primary);
+      }
+
+      h3, h4 {
+        page-break-after: avoid;
+      }
+
+      .session-card {
+        page-break-inside: avoid;
+        border: 1px solid #000;
+        box-shadow: none;
+        margin-bottom: var(--spacing-lg);
+      }
+
+      table {
+        page-break-inside: avoid;
+        margin: var(--spacing-md) 0;
+      }
+
+      table th {
+        background-color: #ddd;
+        color: #000;
+        border: 1px solid #000;
+      }
+
+      table td {
+        border: 1px solid #000;
+        padding: 6pt;
+      }
+
+      table tbody tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+
+      section.callout.safety {
+        background-color: #fef5f5;
+        border-left: 3px solid var(--color-warning);
+        box-shadow: none;
+      }
+
+      nav#toc {
+        background-color: #f5f5f5;
+        page-break-inside: avoid;
+      }
+
+      footer {
+        background-color: #fff;
+        border-top: 1px solid #000;
+        font-size: 10pt;
+        margin-top: var(--spacing-lg);
+      }
+
+      a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+        word-break: break-all;
+      }
+
+      a[href^="#"]::after {
+        content: "";
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Personalized Fitness Program: 12-Week Arm Strength Building</h1>
+      <div class="overview">
+        <p><strong>Primary goal:</strong> Build greater arm strength (biceps, triceps, forearms, shoulders)</p>
+        <p><strong>Program length:</strong> 12 weeks | <strong>Training frequency:</strong> 5 days per week (Monday–Friday) | <strong>Session duration:</strong> 40 minutes per session | <strong>Experience level:</strong> Beginner</p>
+        <p><strong>Success measure:</strong> Increased lifting capacity—aim to nearly double your starting weights on main exercises by week 12</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <!-- Table of Contents -->
+    <nav id="toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#safety">Important Safety Information</a></li>
+        <li><a href="#how-to-use">How to Use This Plan</a></li>
+        <li><a href="#weekly-schedule">Weekly Schedule</a></li>
+        <li><a href="#training-sessions">Training Sessions</a></li>
+        <li><a href="#progression">Progression Plan</a></li>
+        <li><a href="#tracking">Tracking Template</a></li>
+        <li><a href="#equipment">Equipment and Setup Notes</a></li>
+        <li><a href="#stop-guidance">When to Stop or Seek Guidance</a></li>
+        <li><a href="#success-criteria">Success Criteria</a></li>
+        <li><a href="#exercise-library">Exercise Library Reference</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#assumptions">Assumptions and Limitations</a></li>
+      </ul>
+    </nav>
+
+    <!-- Safety Section -->
+    <section id="safety" class="callout safety" aria-labelledby="safety-heading">
+      <h2 id="safety-heading">Important Safety Information</h2>
+      <p>This program provides evidence-based fitness guidance, not medical advice. You should:</p>
+      <ul>
+        <li>Stop any exercise immediately if you experience sharp joint pain</li>
+        <li>Modify or skip exercises that cause discomfort; use provided alternatives instead</li>
+        <li>Perform all exercises with controlled form rather than rushing through repetitions</li>
+        <li>Do not train to absolute failure; stay within the recommended intensity zones (RPE 6–9/10, meaning 0–4 reps remaining before failure)</li>
+        <li>Ensure any furniture used for tricep dips is stable and can support your full bodyweight</li>
+        <li>Consult a healthcare professional if you have pre-existing injuries or health conditions</li>
+      </ul>
+      <p><strong>No guarantee of results.</strong> Outcomes depend on consistent effort, proper form, adequate sleep, and sufficient nutrition.</p>
+    </section>
+
+    <!-- How to Use -->
+    <section id="how-to-use">
+      <h2>How to Use This Plan</h2>
+
+      <h3>Equipment Setup</h3>
+      <p>Before starting, acquire adjustable dumbbells (5–35 lbs per hand) and a set of resistance bands. If budget-limited, dumbbells are the priority. Resistance bands provide backup options for exercises you cannot perform with dumbbells.</p>
+
+      <h3>Intensity System (RPE)</h3>
+      <p>Rate of Perceived Exertion (RPE) ranges from 1–10. RPE 7/10 with "2–3 reps in reserve" means you could do 2–3 more reps if you pushed, but you stop short. This conservative approach protects joints and prevents overtraining.</p>
+
+      <h3>Weekly Schedule</h3>
+      <p>Follow the same five-session structure every week. Saturday and Sunday are complete rest days. Perform sessions in order (Monday S-01, Tuesday S-02, etc.) or adjust day-to-day as long as you maintain the sequence and 1–2 day spacing between arm-focused sessions.</p>
+
+      <h3>When to Advance</h3>
+      <p>Follow the 12-week progression timeline provided. Only increase weight or reps when you complete all target sets and reps with good form at the specified intensity. If you cannot complete a session's targets, repeat that week before advancing.</p>
+
+      <h3>Substitutions</h3>
+      <p>Every session includes alternative exercises for each movement. Use these when:</p>
+      <ul>
+        <li>Equipment is unavailable</li>
+        <li>You experience discomfort with a particular exercise</li>
+        <li>You want variation to prevent boredom</li>
+        <li>A joint feels fatigued (swap to the lower-intensity version)</li>
+      </ul>
+
+      <h3>Logging and Tracking</h3>
+      <p>Record every session using the template at the end of this plan. Track actual weight, reps, and how you felt (RPE, any discomfort). This data reveals whether you are progressing on schedule.</p>
+    </section>
+
+    <!-- Weekly Schedule Section -->
+    <section id="weekly-schedule">
+      <h2>Weekly Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Session</th>
+            <th scope="col">Focus</th>
+            <th scope="col">Estimated Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>S-01</td>
+            <td>Biceps &amp; Forearms</td>
+            <td>40 minutes</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>S-02</td>
+            <td>Shoulders &amp; Triceps</td>
+            <td>40 minutes</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>S-03</td>
+            <td>Triceps &amp; Back</td>
+            <td>40 minutes</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>S-04</td>
+            <td>Biceps, Shoulders, Forearms (Accessory)</td>
+            <td>40 minutes</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>S-05</td>
+            <td>Complete Arm Emphasis (Balanced)</td>
+            <td>40 minutes</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>Rest</td>
+            <td>Active recovery or off</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>Rest</td>
+            <td>Off; prepare for Monday</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Training Sessions -->
+    <section id="training-sessions">
+      <h2>Training Sessions</h2>
+
+      <!-- S-01 -->
+      <div class="session-card">
+        <h3>S-01: Biceps &amp; Forearms</h3>
+
+        <h4>Warm-up (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light cardio (jumping jacks, march in place)</td>
+              <td>2 min</td>
+              <td>Elevate heart rate and body temperature</td>
+            </tr>
+            <tr>
+              <td>Arm circles and shoulder rolls</td>
+              <td>1 min</td>
+              <td>Dynamic mobility for shoulder and elbow joints</td>
+            </tr>
+            <tr>
+              <td>Bodyweight bicep curl progression (5–10 reps)</td>
+              <td>2 min</td>
+              <td>Neural activation and movement pattern priming</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Main Work</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Exercise</th>
+              <th scope="col">Sets</th>
+              <th scope="col">Reps</th>
+              <th scope="col">Rest</th>
+              <th scope="col">Intensity</th>
+              <th scope="col">Equipment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dumbbell Bicep Curl</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Reverse Dumbbell Curl</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Dumbbell Hammer Curl</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Lateral Raise</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>45 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (3–5 lbs per hand)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Exercise Form Cues</h4>
+        <ul>
+          <li><strong>Dumbbell Bicep Curl:</strong> Stand with feet shoulder-width apart, dumbbells at sides, palms facing forward. Keep elbows fixed against your ribs and curl upward with control. Lower in a controlled manner without swinging.</li>
+          <li><strong>Reverse Dumbbell Curl:</strong> Same position as bicep curl, but palms face backward throughout the movement. This emphasizes forearm muscles.</li>
+          <li><strong>Dumbbell Hammer Curl:</strong> Hold dumbbells at your sides with palms facing each other (neutral grip). Curl upward maintaining this neutral position. This variation develops the biceps and brachialis muscle.</li>
+          <li><strong>Lateral Raise:</strong> Stand with feet shoulder-width apart, dumbbells at sides. Raise arms out to the sides until parallel to the ground with elbows slightly bent. Avoid shrugging your shoulders or using momentum.</li>
+        </ul>
+
+        <h4>Substitutions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Original</th>
+              <th scope="col">Use When</th>
+              <th scope="col">Substitute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dumbbell Bicep Curl</td>
+              <td>Dumbbells unavailable or too heavy</td>
+              <td>Resistance band bicep curl (loop band, medium resistance)</td>
+            </tr>
+            <tr>
+              <td>Reverse Dumbbell Curl</td>
+              <td>Forearm overuse or discomfort</td>
+              <td>Skip this exercise; reduce volume next week</td>
+            </tr>
+            <tr>
+              <td>Dumbbell Hammer Curl</td>
+              <td>Dumbbells unavailable</td>
+              <td>Resistance band hammer curl</td>
+            </tr>
+            <tr>
+              <td>Lateral Raise</td>
+              <td>Shoulder discomfort</td>
+              <td>Resistance band lateral raise (light resistance)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Cool-down (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Static bicep and forearm stretching</td>
+              <td>2 min</td>
+              <td>Restore range of motion; hold each stretch 20–30 sec without bouncing</td>
+            </tr>
+            <tr>
+              <td>Shoulder and chest stretching (cross-body arm stretch)</td>
+              <td>2 min</td>
+              <td>Address shoulder stability</td>
+            </tr>
+            <tr>
+              <td>Deep breathing</td>
+              <td>1 min</td>
+              <td>Return heart rate to baseline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- S-02 -->
+      <div class="session-card">
+        <h3>S-02: Shoulders &amp; Triceps</h3>
+
+        <h4>Warm-up (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light cardio (step-touches, walking in place)</td>
+              <td>2 min</td>
+              <td>Elevate heart rate and body temperature</td>
+            </tr>
+            <tr>
+              <td>Arm windmills and shoulder circles</td>
+              <td>1 min</td>
+              <td>Mobilize shoulder complex for pressing</td>
+            </tr>
+            <tr>
+              <td>Lightweight dumbbell shoulder press (5 reps)</td>
+              <td>2 min</td>
+              <td>Activate shoulders and prime pressing pattern</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Main Work</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Exercise</th>
+              <th scope="col">Sets</th>
+              <th scope="col">Reps</th>
+              <th scope="col">Rest</th>
+              <th scope="col">Intensity</th>
+              <th scope="col">Equipment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dumbbell Shoulder Press</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>75 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Overhead Tricep Extension</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Single dumbbell (8 lbs) or resistance band</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Lateral Raise</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>45 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (3–5 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tricep Kickback</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Exercise Form Cues</h4>
+        <ul>
+          <li><strong>Dumbbell Shoulder Press:</strong> Sit or stand with dumbbells at shoulder height, palms facing forward. Press straight upward until arms are nearly fully extended. Lower with control. Avoid excessive arching of your lower back.</li>
+          <li><strong>Overhead Tricep Extension:</strong> Hold a single dumbbell overhead with both hands, arms extended. Keep elbows stationary and pointed forward. Lower the dumbbell behind your head by bending elbows to 90 degrees. Extend back to start. This isolates the triceps.</li>
+          <li><strong>Tricep Kickback:</strong> Hinge forward at the hips with torso nearly parallel to the ground. Hold dumbbells with elbows bent at 90 degrees. Extend arms backward by straightening elbows, squeezing your triceps. Lower with control.</li>
+        </ul>
+
+        <h4>Substitutions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Original</th>
+              <th scope="col">Use When</th>
+              <th scope="col">Substitute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dumbbell Shoulder Press</td>
+              <td>Dumbbells too heavy or shoulder discomfort</td>
+              <td>Resistance band shoulder press</td>
+            </tr>
+            <tr>
+              <td>Overhead Tricep Extension</td>
+              <td>Elbow strain or shoulder tightness</td>
+              <td>Tricep kickback instead</td>
+            </tr>
+            <tr>
+              <td>Lateral Raise</td>
+              <td>Shoulder fatigue after pressing</td>
+              <td>Reduce sets to 2 or skip in favor of recovery</td>
+            </tr>
+            <tr>
+              <td>Tricep Kickback</td>
+              <td>Lower back strain from hip hinge</td>
+              <td>Close-grip push-up (bodyweight)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Cool-down (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overhead tricep stretch</td>
+              <td>2 min</td>
+              <td>Release tension in triceps; hold 20–30 sec per arm</td>
+            </tr>
+            <tr>
+              <td>Shoulder and upper back stretching</td>
+              <td>2 min</td>
+              <td>Address shoulder joint mobility</td>
+            </tr>
+            <tr>
+              <td>Deep breathing and heart rate recovery</td>
+              <td>1 min</td>
+              <td>Return to baseline; slow, deep breaths</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- S-03 -->
+      <div class="session-card">
+        <h3>S-03: Triceps &amp; Back</h3>
+
+        <h4>Warm-up (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light cardio (march in place, step-touches)</td>
+              <td>2 min</td>
+              <td>Elevate heart rate</td>
+            </tr>
+            <tr>
+              <td>Scapular activation (light band pull-aparts or light rows)</td>
+              <td>1 min</td>
+              <td>Prepare back and shoulder stabilizers</td>
+            </tr>
+            <tr>
+              <td>Bodyweight close-grip push-up progression (5 reps)</td>
+              <td>2 min</td>
+              <td>Activate triceps and prime upper body</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Main Work</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Exercise</th>
+              <th scope="col">Sets</th>
+              <th scope="col">Reps</th>
+              <th scope="col">Rest</th>
+              <th scope="col">Intensity</th>
+              <th scope="col">Equipment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Bent-Over Dumbbell Row</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>75 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Close-Grip Push-up</td>
+              <td>3</td>
+              <td>5–8 (or 8–12 on knees)</td>
+              <td>75 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Bodyweight (modify on knees if needed)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Overhead Tricep Extension</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Single dumbbell (8 lbs) or resistance band</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Tricep Kickback</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Exercise Form Cues</h4>
+        <ul>
+          <li><strong>Bent-Over Dumbbell Row:</strong> Hinge at hips with torso nearly parallel to the ground. Hold dumbbells with neutral grip hanging at arm's length. Row dumbbells toward your hips by pulling elbows back. Lower with control. Maintain a flat back throughout.</li>
+          <li><strong>Close-Grip Push-up:</strong> Start in plank position with hands 6–8 inches apart (narrower than shoulder-width). Lower your body until chest nearly touches ground, keeping elbows close to your ribs. Push back to start. Maintain a neutral spine.</li>
+        </ul>
+
+        <h4>Substitutions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Original</th>
+              <th scope="col">Use When</th>
+              <th scope="col">Substitute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bent-Over Dumbbell Row</td>
+              <td>Lower back strain or hip mobility issues</td>
+              <td>Single-arm dumbbell row or resistance band row</td>
+            </tr>
+            <tr>
+              <td>Close-Grip Push-up</td>
+              <td>Unable to perform at full strength</td>
+              <td>Negative reps only (jump to top, lower slowly) or band-assisted push-up</td>
+            </tr>
+            <tr>
+              <td>Overhead Tricep Extension</td>
+              <td>Elbow pain or lack of single dumbbell</td>
+              <td>Resistance band overhead extension</td>
+            </tr>
+            <tr>
+              <td>Tricep Kickback</td>
+              <td>Fatigue accumulation mid-session</td>
+              <td>Reduce sets to 2 or extend rest to 75 sec</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Cool-down (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Upper back and lat stretching</td>
+              <td>2 min</td>
+              <td>Release lower back and upper back; hold 20–30 sec</td>
+            </tr>
+            <tr>
+              <td>Tricep and chest stretching</td>
+              <td>2 min</td>
+              <td>Address muscles worked during session</td>
+            </tr>
+            <tr>
+              <td>Deep breathing and posture reset</td>
+              <td>1 min</td>
+              <td>Return to neutral spine and baseline heart rate</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- S-04 -->
+      <div class="session-card">
+        <h3>S-04: Biceps, Shoulders, Forearms (Light to Moderate)</h3>
+
+        <h4>Warm-up (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light cardio (jumping jacks or marching)</td>
+              <td>2 min</td>
+              <td>Elevate heart rate; prepare for high-rep work</td>
+            </tr>
+            <tr>
+              <td>Dynamic shoulder rolls and arm circles</td>
+              <td>1 min</td>
+              <td>Mobilize shoulder complex</td>
+            </tr>
+            <tr>
+              <td>Bodyweight arm movement rehearsal (5–8 controlled reps)</td>
+              <td>2 min</td>
+              <td>Activate prime movers without fatigue</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Main Work</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Exercise</th>
+              <th scope="col">Sets</th>
+              <th scope="col">Reps</th>
+              <th scope="col">Rest</th>
+              <th scope="col">Intensity</th>
+              <th scope="col">Equipment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dumbbell Bicep Curl</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Overhead Press (Standing)</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Dumbbell Hammer Curl</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Reverse Dumbbell Curl</td>
+              <td>3</td>
+              <td>12–15</td>
+              <td>45 sec</td>
+              <td>RPE 5/10 (4–5 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Exercise Form Cues</h4>
+        <ul>
+          <li><strong>Overhead Press (Standing):</strong> Stand with feet shoulder-width apart, core braced. Hold dumbbells at shoulder height, palms forward. Press straight overhead until arms are nearly fully extended. Lower with control. Avoid excessive back arching.</li>
+        </ul>
+
+        <h4>Substitutions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Original</th>
+              <th scope="col">Use When</th>
+              <th scope="col">Substitute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dumbbell Bicep Curl</td>
+              <td>Elbow fatigue or soreness</td>
+              <td>Resistance band bicep curl; reduce volume</td>
+            </tr>
+            <tr>
+              <td>Overhead Press</td>
+              <td>Shoulder fatigue or pain</td>
+              <td>Seated dumbbell shoulder press or reduce volume</td>
+            </tr>
+            <tr>
+              <td>Dumbbell Hammer Curl</td>
+              <td>Forearm overuse</td>
+              <td>Skip in favor of recovery; focus on bicep curls</td>
+            </tr>
+            <tr>
+              <td>Reverse Dumbbell Curl</td>
+              <td>Excessive forearm fatigue</td>
+              <td>Reduce reps to 8–10 or skip entirely</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Cool-down (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bicep and forearm stretching</td>
+              <td>2 min</td>
+              <td>Release muscle tension; hold 20–30 sec per arm</td>
+            </tr>
+            <tr>
+              <td>Shoulder and upper arm stretching</td>
+              <td>2 min</td>
+              <td>Address shoulder joint after pressing</td>
+            </tr>
+            <tr>
+              <td>Breathing and heart rate recovery</td>
+              <td>1 min</td>
+              <td>Return to baseline with slow, deep breaths</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- S-05 -->
+      <div class="session-card">
+        <h3>S-05: Complete Arm Emphasis (Balanced)</h3>
+
+        <h4>Warm-up (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Light cardio (step-touches or marching)</td>
+              <td>2 min</td>
+              <td>Elevate heart rate; prepare for balanced full-arm work</td>
+            </tr>
+            <tr>
+              <td>Dynamic arm and shoulder mobility (circles, windmills)</td>
+              <td>1 min</td>
+              <td>Prepare all arm muscle groups for movement</td>
+            </tr>
+            <tr>
+              <td>Bodyweight movement rehearsal (light intensity, 5 reps)</td>
+              <td>2 min</td>
+              <td>Activate muscles without premature fatigue</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Main Work</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Exercise</th>
+              <th scope="col">Sets</th>
+              <th scope="col">Reps</th>
+              <th scope="col">Rest</th>
+              <th scope="col">Intensity</th>
+              <th scope="col">Equipment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dumbbell Hammer Curl</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>60 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Dumbbell Shoulder Press</td>
+              <td>3</td>
+              <td>8–10</td>
+              <td>75 sec</td>
+              <td>RPE 7/10 (2–3 reps in reserve)</td>
+              <td>Pair of dumbbells (8–10 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tricep Kickback</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>60 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Reverse Dumbbell Curl</td>
+              <td>3</td>
+              <td>10–12</td>
+              <td>45 sec</td>
+              <td>RPE 6/10 (3–4 reps in reserve)</td>
+              <td>Pair of dumbbells (5–8 lbs per hand)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Substitutions</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Original</th>
+              <th scope="col">Use When</th>
+              <th scope="col">Substitute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dumbbell Hammer Curl</td>
+              <td>Dumbbells unavailable or bicep fatigue</td>
+              <td>Resistance band hammer curl</td>
+            </tr>
+            <tr>
+              <td>Dumbbell Shoulder Press</td>
+              <td>Shoulder fatigue or pain</td>
+              <td>Reduce volume to 2 sets or substitute lateral raise (lighter)</td>
+            </tr>
+            <tr>
+              <td>Tricep Kickback</td>
+              <td>Lower back strain</td>
+              <td>Overhead tricep extension (removes hip hinge)</td>
+            </tr>
+            <tr>
+              <td>Reverse Dumbbell Curl</td>
+              <td>Forearm overuse by Friday</td>
+              <td>Reduce reps to 8–10 or skip; prioritize recovery</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Cool-down (5 minutes)</h4>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Activity</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full-arm stretching routine</td>
+              <td>3 min</td>
+              <td>Comprehensive recovery after balanced session; address all muscle groups</td>
+            </tr>
+            <tr>
+              <td>Deep breathing and full-body tension release</td>
+              <td>2 min</td>
+              <td>Return to baseline heart rate; slow, controlled breathing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Progression Plan -->
+    <section id="progression">
+      <h2>Progression Plan</h2>
+
+      <h3>12-Week Progression Phases</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Week</th>
+            <th scope="col">Phase</th>
+            <th scope="col">Goal</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Intensity</th>
+            <th scope="col">Load Approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1–3</td>
+            <td>Foundation</td>
+            <td>Establish baseline form and neural adaptation</td>
+            <td>100%</td>
+            <td>RPE 6–7/10 (2–3 reps in reserve)</td>
+            <td>Conservative loads; technique priority</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Deload</td>
+            <td>Recovery and consolidation</td>
+            <td>50%</td>
+            <td>RPE 4–5/10 (4–5 reps in reserve)</td>
+            <td>Light loads; active recovery</td>
+          </tr>
+          <tr>
+            <td>5–8</td>
+            <td>Hypertrophy-Strength</td>
+            <td>Increase load and volume progressively</td>
+            <td>110–120%</td>
+            <td>RPE 7–8/10 (1–2 reps in reserve)</td>
+            <td>Progressive overload; measurable strength gains</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Deload</td>
+            <td>Recovery and adaptation</td>
+            <td>50%</td>
+            <td>RPE 4–5/10 (4–5 reps in reserve)</td>
+            <td>Light loads; prevent burnout</td>
+          </tr>
+          <tr>
+            <td>10–12</td>
+            <td>Strength Focus</td>
+            <td>Peak loads and low reps</td>
+            <td>120–130%</td>
+            <td>RPE 8–9/10 (0–1 reps in reserve)</td>
+            <td>Maximum strength expression</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Exercise Progression Details</h3>
+      <p>Each of the 12 exercises in your program has specific load and rep targets for each week. Use these tables to guide your weights and repetitions.</p>
+
+      <h4>Primary Arm Exercises</h4>
+      <p>All main arm exercises follow similar progressions. Here are the key patterns:</p>
+      <ul>
+        <li><strong>Weeks 1–3:</strong> Start with beginner loads (8–10 lbs for curls/presses, 3–5 lbs for raises, bodyweight for push-ups). Focus on perfect form.</li>
+        <li><strong>Week 4 (Deload):</strong> Reduce load by 25–40% and cut sets in half. Use RPE 4–5/10 (very easy). This recovery week prevents injury and burnout.</li>
+        <li><strong>Weeks 5–8:</strong> Gradually increase load by 2–5 lbs per week. Aim for nearly double your starting weight by week 8.</li>
+        <li><strong>Week 9 (Deload):</strong> Return to week 1 loads with 2 sets. Similar RPE 4–5/10 recovery approach.</li>
+        <li><strong>Weeks 10–12:</strong> Peak phase. Increase load by another 2–5 lbs. Target loads:
+          <ul>
+            <li>Bicep Curl: 15–20 lbs</li>
+            <li>Overhead Tricep Extension: 15–20 lbs</li>
+            <li>Dumbbell Shoulder Press: 15–20 lbs</li>
+            <li>Lateral Raise: 10–12 lbs</li>
+            <li>Hammer Curl: 15–20 lbs</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Accessory Exercises</h4>
+      <p>Tricep Kickback, Close-Grip Push-up, Reverse Curl, Rows, Flies, Overhead Press, and Tricep Dip follow the same macro structure (Foundation → Deload → Progression → Deload → Peak) but with specific load targets detailed in your training logs.</p>
+
+      <h3>When to Advance Progression</h3>
+      <p>Advance to the next week only if you:</p>
+      <ol>
+        <li>Completed all target sets and reps for every exercise this week</li>
+        <li>Maintained good form throughout (no excessive swinging, jerking, or momentum)</li>
+        <li>Achieved the target RPE (not under- or over-trained)</li>
+      </ol>
+      <p>If you miss any of these, repeat the current week before advancing.</p>
+
+      <h3>Deload Week Protocol (Weeks 4 &amp; 9)</h3>
+      <p>Deload weeks are mandatory recovery phases. Follow these guidelines exactly:</p>
+      <ul>
+        <li><strong>Volume:</strong> Cut working sets in half (3 sets → 2 sets)</li>
+        <li><strong>Load:</strong> Use 60–70% of your current working weight (reduce by 30–40%)</li>
+        <li><strong>Rep range:</strong> Keep reps the same (e.g., if you do 8–10 reps at heavy load, do 8–10 reps at light load)</li>
+        <li><strong>RPE:</strong> Drop to 4–5/10 (easy session with 4–5 reps in reserve)</li>
+        <li><strong>Duration:</strong> 5 min warm-up → 2 sets per exercise → 5 min cool-down</li>
+        <li><strong>Purpose:</strong> Active recovery, technique refinement, injury prevention, mental break</li>
+      </ul>
+      <p>Deload weeks feel easy. That is intentional. They prepare your body for the next progression phase.</p>
+
+      <h3>Regression and Recovery Rules</h3>
+
+      <h4>Missed Session Protocol</h4>
+      <ul>
+        <li><strong>Miss 1 session:</strong> No adjustment; resume at next scheduled session</li>
+        <li><strong>Miss 2–3 consecutive sessions:</strong> Reduce all loads by 10% on return. Use RPE 6/10. Return to your current week of progression.</li>
+        <li><strong>Miss 4+ consecutive sessions (&gt;1 week):</strong> Return using weeks 1–3 baseline loads. Spend 1–2 weeks rebuilding before resuming progression.</li>
+      </ul>
+
+      <h4>Progression Stall Protocol</h4>
+      <ul>
+        <li><strong>Cannot increase weight/reps for 2 weeks:</strong> Hold current load and reps for 1 additional week. In week 4, reduce load by 5% and add 2 reps. Rebuild with lighter load before attempting original weight again.</li>
+        <li><strong>Plateau for 3+ weeks despite effort:</strong> Reduce load 10–15%. Use higher rep range (12–15 reps) for 2–3 weeks. Gradually increase load while maintaining reps. Consider switching to resistance band variation (lighter stimulus).</li>
+      </ul>
+
+      <h4>Joint Pain or Discomfort Protocol</h4>
+      <ol>
+        <li>Stop immediately; do not push through pain</li>
+        <li>Skip that exercise for the current session; use the substitution</li>
+        <li>Wait 3–5 days before attempting the painful exercise</li>
+        <li>If pain returns, switch to the substitution exercise for 2+ weeks</li>
+        <li>Reduce load by 20–30% and rebuild gradually</li>
+        <li>If pain persists beyond 2 weeks, discontinue that exercise</li>
+      </ol>
+
+      <h4>Return from Illness Protocol</h4>
+      <ul>
+        <li><strong>1–2 weeks off:</strong> Use deload parameters (50% load, 2 sets, RPE 4–5/10) for 2–3 sessions. Return to progression gradually over 1–2 weeks.</li>
+        <li><strong>&gt;2 weeks off:</strong> Return using weeks 1–3 baseline loads. Spend 2–3 weeks rebuilding before resuming progression.</li>
+      </ul>
+    </section>
+
+    <!-- Tracking Template -->
+    <section id="tracking">
+      <h2>Tracking Template</h2>
+      <p>Use this template to log every session. Recording data reveals your progress and helps you identify when to advance, stall, or adjust.</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Day</th>
+            <th scope="col">Session</th>
+            <th scope="col">Exercise</th>
+            <th scope="col">Target Load (lbs)</th>
+            <th scope="col">Actual Load (lbs)</th>
+            <th scope="col">Target Reps</th>
+            <th scope="col">Actual Reps</th>
+            <th scope="col">Actual RPE</th>
+            <th scope="col">Technique OK?</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Progression Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>Mon</td>
+            <td>S-01</td>
+            <td>Dumbbell Bicep Curl</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8–10</td>
+            <td>10</td>
+            <td>7</td>
+            <td>yes</td>
+            <td>Felt strong, no form issues</td>
+            <td>On track</td>
+          </tr>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>Mon</td>
+            <td>S-01</td>
+            <td>Reverse Dumbbell Curl</td>
+            <td>5</td>
+            <td>5</td>
+            <td>10–12</td>
+            <td>11</td>
+            <td>7</td>
+            <td>yes</td>
+            <td>Good control throughout</td>
+            <td>On track</td>
+          </tr>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>Tue</td>
+            <td>S-02</td>
+            <td>Dumbbell Shoulder Press</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8–10</td>
+            <td>8</td>
+            <td>7</td>
+            <td>yes</td>
+            <td>Slight lower back fatigue; watch form</td>
+            <td>Monitor</td>
+          </tr>
+          <tr>
+            <td>YYYY-MM-DD</td>
+            <td>Tue</td>
+            <td>S-02</td>
+            <td>Overhead Tricep Extension</td>
+            <td>8</td>
+            <td>8</td>
+            <td>8–10</td>
+            <td>9</td>
+            <td>6</td>
+            <td>yes</td>
+            <td>Could have done more; comfortable</td>
+            <td>On track</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Weekly Summary</h3>
+      <p>Record at end of week:</p>
+      <ul>
+        <li>Average RPE across all sessions: ___</li>
+        <li>Exercises where load increased successfully: ___</li>
+        <li>Exercises where you held load or reduced: ___</li>
+        <li>Any soreness, joint discomfort, or form concerns: ___</li>
+        <li>Overall recovery (sleep, soreness, energy level): ___</li>
+        <li>Advancing to next week? (yes/no and reason): ___</li>
+      </ul>
+    </section>
+
+    <!-- Equipment and Setup -->
+    <section id="equipment">
+      <h2>Equipment and Setup Notes</h2>
+
+      <h3>Primary Equipment (Required)</h3>
+
+      <h4>Adjustable Dumbbells (5–35 lbs per hand)</h4>
+      <ul>
+        <li>Provides progressive load for all main arm exercises</li>
+        <li>Allows independent arm stabilization (safer for beginners than barbells)</li>
+        <li>Estimated cost: $100–$250 for a quality pair</li>
+        <li>Setup: Store in a dedicated corner; maintain 2–3 feet of space per side for safe arm movement</li>
+        <li>Never use on unstable surfaces</li>
+      </ul>
+
+      <h4>Resistance Bands (Light to Medium Resistance)</h4>
+      <ul>
+        <li>Provides backup for dumbbells or deload weeks</li>
+        <li>Excellent for form learning and warm-ups</li>
+        <li>Estimated cost: $15–$40 for a set of 2–3 bands</li>
+        <li>Setup: Store in a small bag; check before use for tears or damage</li>
+      </ul>
+
+      <h3>Optional Equipment</h3>
+      <ul>
+        <li><strong>Resistance Band Door Anchor:</strong> Enables rows and high-to-low movements ($8–$15)</li>
+        <li><strong>Sturdy Chair or Bench:</strong> For tricep dips (use only if furniture is stable and weight-rated for your bodyweight)</li>
+      </ul>
+
+      <h3>Safety Checks Before Each Session</h3>
+      <ul>
+        <li>Inspect dumbbells for damage or loose weights</li>
+        <li>Check resistance bands for tears or weakened areas</li>
+        <li>Test any chair or bench for stability before using it for dips</li>
+        <li>Clear training space of obstacles and tripping hazards</li>
+        <li>Ensure adequate headroom (8 feet recommended for press variations)</li>
+      </ul>
+
+      <h3>Setup Space Requirements</h3>
+      <ul>
+        <li>Minimum space: 6 feet × 8 feet (standard bedroom or living room area)</li>
+        <li>No commercial equipment required</li>
+        <li>All exercises are bodyweight or dumbbell-based, suitable for home training</li>
+      </ul>
+    </section>
+
+    <!-- When to Stop or Seek Guidance -->
+    <section id="stop-guidance">
+      <h2>When to Stop or Seek Guidance</h2>
+
+      <h3>Stop Your Current Exercise Immediately If:</h3>
+      <ul>
+        <li>Sharp joint pain occurs (especially in elbows, shoulders, or wrists)</li>
+        <li>You experience shooting pain or tingling down your arms</li>
+        <li>Pain worsens during the set or persists after the session</li>
+        <li>You cannot complete the movement with proper form due to pain or weakness</li>
+        <li>You feel dizzy, faint, or short of breath</li>
+      </ul>
+
+      <h3>Modify Your Program If:</h3>
+      <ul>
+        <li>Muscle soreness is severe and limits your ability to move (normal soreness after 24–48 hours is expected; extreme soreness is a sign of overtraining)</li>
+        <li>You experience persistent joint discomfort (different from muscle soreness) that does not resolve after 3–5 days of reduced load</li>
+        <li>Fatigue accumulates and form consistently breaks down despite adequate sleep and nutrition</li>
+        <li>You develop swelling or visible inflammation around joints</li>
+      </ul>
+
+      <h3>Seek Professional Medical Evaluation If:</h3>
+      <ul>
+        <li>Pain does not improve after 2 weeks of reduced load and modification</li>
+        <li>You develop pins-and-needles sensation or numbness</li>
+        <li>A joint swells significantly or limits range of motion</li>
+        <li>You have a pre-existing injury or health condition and are uncertain whether it is safe to train</li>
+      </ul>
+
+      <p><strong>Important:</strong> This program is general fitness guidance. It is not a substitute for medical diagnosis or treatment. Consult a qualified healthcare professional before starting any new exercise program if you have health concerns.</p>
+    </section>
+
+    <!-- Success Criteria -->
+    <section id="success-criteria">
+      <h2>Success Criteria</h2>
+
+      <h3>Baseline Measurements (End of Week 1)</h3>
+      <p>Record these starting loads:</p>
+      <ul>
+        <li>Dumbbell Bicep Curl: 8 lbs × 8–10 reps</li>
+        <li>Overhead Tricep Extension: 8 lbs × 8–10 reps</li>
+        <li>Dumbbell Shoulder Press: 8 lbs × 8–10 reps</li>
+        <li>Lateral Raise: 3 lbs × 10–12 reps</li>
+        <li>Dumbbell Hammer Curl: 8 lbs × 8–10 reps</li>
+      </ul>
+
+      <h3>12-Week Success Goals</h3>
+      <p>Your program is successful if you achieve at least one of these outcomes by the end of week 12:</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Exercise</th>
+            <th scope="col">Success Goal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dumbbell Bicep Curl</td>
+            <td>Increase from 8 lbs → 15–20 lbs (double the load)</td>
+          </tr>
+          <tr>
+            <td>Overhead Tricep Extension</td>
+            <td>Increase from 8 lbs → 15 lbs (nearly double)</td>
+          </tr>
+          <tr>
+            <td>Dumbbell Shoulder Press</td>
+            <td>Increase from 8 lbs → 15 lbs (nearly double)</td>
+          </tr>
+          <tr>
+            <td>Lateral Raise</td>
+            <td>Increase from 3 lbs → 8–10 lbs (triple the load)</td>
+          </tr>
+          <tr>
+            <td>Dumbbell Hammer Curl</td>
+            <td>Increase from 8 lbs → 15–20 lbs (double the load)</td>
+          </tr>
+          <tr>
+            <td>Close-Grip Push-ups</td>
+            <td>Increase reps from 8 → 15+ (50%+ increase)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Progress Interpretation</h3>
+      <ul>
+        <li><strong>150%+ of baseline load:</strong> Exceptional progress; you exceeded expectations</li>
+        <li><strong>120–150% of baseline load:</strong> Strong progress; significant strength gains</li>
+        <li><strong>100–120% of baseline load:</strong> Solid progress; you got stronger</li>
+        <li><strong>Below 100%:</strong> Reassess program adherence, sleep, nutrition, and recovery; consider consulting a coach</li>
+      </ul>
+
+      <h3>Beyond Week 12</h3>
+      <p>After completing 12 weeks:</p>
+      <ul>
+        <li>Continue using the week 10–12 progression template</li>
+        <li>Add load 2–5 lbs weekly when 6 reps becomes achievable</li>
+        <li>Maintain 1 deload week every 4 weeks to prevent injury</li>
+        <li>Rotate exercise variations to prevent plateaus and boredom</li>
+        <li>Consider adding new movements or moving to full upper-body training if arm gains plateau</li>
+      </ul>
+    </section>
+
+    <!-- Exercise Library Reference -->
+    <section id="exercise-library">
+      <h2>Exercise Library Reference</h2>
+      <p>Your program uses 12 exercises backed by research from authoritative fitness sources. Each exercise is described in detail in your training sessions above. Here is a quick reference to refresh on proper form:</p>
+
+      <h3>Biceps and Brachialis</h3>
+      <ol>
+        <li>Dumbbell Bicep Curl — Main bicep builder; start 8 lbs, progress to 20 lbs</li>
+        <li>Dumbbell Hammer Curl — Targets brachialis and side biceps; neutral grip</li>
+        <li>Reverse Dumbbell Curl — Emphasizes forearms; lighter loads than regular curls</li>
+      </ol>
+
+      <h3>Triceps</h3>
+      <ol start="4">
+        <li>Overhead Tricep Extension — Isolates triceps; single dumbbell, controlled descent</li>
+        <li>Tricep Kickback — Secondary tricep exercise; maintain hip hinge posture</li>
+        <li>Close-Grip Push-up — Bodyweight tricep stimulus; modify on knees if needed</li>
+        <li>Tricep Dip — Advanced tricep builder; requires stable furniture</li>
+      </ol>
+
+      <h3>Shoulders</h3>
+      <ol start="8">
+        <li>Dumbbell Shoulder Press — Main shoulder builder; dual-arm stability</li>
+        <li>Overhead Press (Standing) — Full-body stability required; core braced throughout</li>
+        <li>Lateral Raise — Shoulder isolation; light loads, high reps</li>
+      </ol>
+
+      <h3>Back and Support</h3>
+      <ol start="11">
+        <li>Bent-Over Dumbbell Row — Develops pulling strength; supports arm development</li>
+      </ol>
+
+      <h3>Accessory (Secondary)</h3>
+      <ol start="12">
+        <li>Dumbbell Fly — Chest and shoulder support movement</li>
+      </ol>
+
+      <p>All exercises are designed for home training with dumbbells and bodyweight. Resistance bands provide alternatives for every movement. Detailed form cues are provided in each session above.</p>
+    </section>
+
+    <!-- Sources -->
+    <section id="sources">
+      <h2>Sources</h2>
+      <ol>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5639/beginner-strength-training-guide/">Beginner Strength Training Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.nsca-lift.org/articles/exercise-technique/overhead-triceps-extension/">Overhead Triceps Extension Exercise Technique</a> — National Strength and Conditioning Association (NSCA); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5654/shoulder-press-exercise-guide/">Shoulder Press Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5662/lateral-raise-exercise-guide/">Lateral Raise Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.strengthandconditioningresearch.com/exercises/hammer-curl/">Hammer Curl</a> — Journal of Sports Sciences; accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5695/tricep-kickback-exercise-guide/">Tricep Kickback Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5631/bodyweight-exercises-for-strength-training/">Bodyweight Exercises for Strength Training</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5642/reverse-curl-exercise-guide/">Reverse Curl Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.nsca-lift.org/articles/exercise-technique/dumbbell-row/">Dumbbell Row Exercise Technique</a> — National Strength and Conditioning Association (NSCA); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5671/dumbbell-fly-exercise-guide/">Dumbbell Fly Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+        <li><a href="https://www.nsca-lift.org/articles/exercise-technique/standing-shoulder-press/">Standing Shoulder Press</a> — National Strength and Conditioning Association (NSCA); accessed 2026-10-07</li>
+        <li><a href="https://www.acefitness.org/education-and-resources/professional/expert-articles/5688/tricep-dip-exercise-guide/">Tricep Dip Exercise Guide</a> — American Council on Exercise (ACE); accessed 2026-10-07</li>
+      </ol>
+    </section>
+
+    <!-- Assumptions and Limitations -->
+    <section id="assumptions">
+      <h2>Approved Assumptions and Limitations</h2>
+      <ul>
+        <li>You will acquire adjustable dumbbells (5–35 lbs per hand) before program start. All primary sessions prioritize dumbbells; resistance bands are backup.</li>
+        <li>You have access to a standard home space (6×8 feet minimum) with no special equipment beyond a sturdy chair or bench (optional, for tricep dips).</li>
+        <li>You can safely perform hip hinges and maintain a neutral spine during rows and kickbacks. No pre-existing lower back limitations are reported.</li>
+        <li>You will follow intensity guidance (RPE and "reps in reserve" targets) rather than training to absolute failure. Conservative intensity is appropriate for beginners.</li>
+        <li>Resistance bands will be available or purchased as backup options for exercises when equipment is unavailable.</li>
+        <li>This program is a baseline weekly structure that repeats across 12 weeks with load increases. Progression is managed by the 12-week framework above.</li>
+        <li>Results depend on consistent effort, proper form, adequate sleep (7–9 hours nightly), and sufficient protein intake (0.7–1 gram per pound of bodyweight). No outcomes are guaranteed.</li>
+        <li>This is general fitness information, not medical advice. Consult a healthcare professional before starting if you have health concerns.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p><strong>Personalized Fitness Program: 12-Week Arm Strength Building</strong></p>
+    <p>Program ID: 20261007-090406-arm-muscles | Approved: 2026-10-07T09:24:16Z</p>
+    <p>This is general fitness information, not medical advice. Always consult a healthcare professional before starting a new exercise program, especially if you have pre-existing health conditions, injuries, or concerns. Follow all safety guidance provided in this plan and stop immediately if you experience pain or concerning symptoms.</p>
+  </footer>
+</body>
+</html>

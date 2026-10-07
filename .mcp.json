@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "wger": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "wger-mcp",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "WGER_BASE_URL": "https://wger.de",
+        "WGER_API_KEY": "${WGER_API_KEY}",
+        "MCP_TOOLS": "exercises,equipment",
+        "SSL_CERT_FILE": "/etc/ssl/certs/ca-certificates.crt"
+      }
+    }
+  }
+}

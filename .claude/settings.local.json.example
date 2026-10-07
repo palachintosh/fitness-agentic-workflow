@@ -1,0 +1,8 @@
+{
+  "env": {
+    "WGER_API_KEY": "replace-with-your-wger-api-key"
+  },
+  "enabledMcpjsonServers": [
+    "wger"
+  ]
+}
