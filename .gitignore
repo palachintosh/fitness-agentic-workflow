@@ -16,6 +16,7 @@
 *.temp
 tmp/
 .tmp/
+**/.workflow-state.lock
 
 # Python caches and local environments
 __pycache__/

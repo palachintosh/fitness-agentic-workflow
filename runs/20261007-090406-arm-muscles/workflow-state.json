@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "run_id": "20261007-090406-arm-muscles",
+  "status": "complete",
+  "original_request": "I want to improve my arms muscles. What is the fastest way to do it?",
+  "requirements_confirmed": true,
+  "selected_agents": [
+    "requirements-formalizer",
+    "exercise-researcher",
+    "equipment-planner",
+    "program-designer",
+    "progression-planner",
+    "validator",
+    "plan-synthesizer",
+    "html-builder"
+  ],
+  "execution_order": [
+    ["requirements-formalizer"],
+    ["exercise-researcher", "equipment-planner"],
+    ["program-designer"],
+    ["progression-planner"],
+    ["validator"],
+    ["plan-synthesizer"],
+    ["validator"],
+    ["html-builder"]
+  ],
+  "artifacts": {
+    "requirements": {
+      "path": "runs/20261007-090406-arm-muscles/requirements.md",
+      "owner": "requirements-formalizer",
+      "status": "confirmed",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "exercise_research": {
+      "path": "runs/20261007-090406-arm-muscles/exercise-research.md",
+      "owner": "exercise-researcher",
+      "status": "complete",
+      "attempt": 2,
+      "gate": "pass"
+    },
+    "equipment_plan": {
+      "path": "runs/20261007-090406-arm-muscles/equipment-plan.md",
+      "owner": "equipment-planner",
+      "status": "complete",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "program_draft": {
+      "path": "runs/20261007-090406-arm-muscles/program-draft.md",
+      "owner": "program-designer",
+      "status": "complete",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "progression_plan": {
+      "path": "runs/20261007-090406-arm-muscles/progression-plan.md",
+      "owner": "progression-planner",
+      "status": "complete",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "validation": {
+      "path": "runs/20261007-090406-arm-muscles/validation.md",
+      "owner": "validator",
+      "status": "complete",
+      "attempt": 2,
+      "gate": "pass"
+    },
+    "approved_candidate": {
+      "path": "runs/20261007-090406-arm-muscles/approved-candidate.md",
+      "owner": "plan-synthesizer",
+      "status": "complete",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "approval": {
+      "path": "runs/20261007-090406-arm-muscles/approval.md",
+      "owner": "coordinator",
+      "status": "approved",
+      "attempt": 1,
+      "gate": "pass"
+    },
+    "fitness_plan_html": {
+      "path": "runs/20261007-090406-arm-muscles/fitness-plan.html",
+      "owner": "html-builder",
+      "status": "complete",
+      "attempt": 1,
+      "gate": "pass"
+    }
+  },
+  "validation": {
+    "mode": "final_candidate",
+    "attempt": 1,
+    "result": "pass",
+    "retry_counts": {}
+  },
+  "approval": {
+    "status": "approved",
+    "exact_response": "APPROVE FITNESS PLAN",
+    "candidate_sha256": "1998cc24e4821eaf35a6d5dadc466a373c1b54a4c1c856828dee4ad2ca0661f2",
+    "recorded_at": "2026-10-07T09:24:16Z"
+  },
+  "next_stage": null,
+  "last_error": null,
+  "created_at": "2026-10-07T09:04:06Z",
+  "updated_at": "2026-10-07T09:28:00Z"
+}

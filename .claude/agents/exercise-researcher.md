@@ -1,10 +1,14 @@
 ---
 name: exercise-researcher
 description: Researches sourced exercise candidates that match confirmed fitness requirements. Use after requirements confirmation and before program design.
-tools: Read, Write, Edit, WebSearch, WebFetch
+tools: Read, Write, Edit, WebSearch, WebFetch, mcp__wger__*
 model: haiku
 permissionMode: dontAsk
 maxTurns: 3
+skills:
+  - artifact-validator
+mcpServers:
+  - wger
 ---
 
 # Exercise Researcher

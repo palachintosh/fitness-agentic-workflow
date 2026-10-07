@@ -5,6 +5,8 @@ tools: Read, Write, Edit
 model: haiku
 permissionMode: dontAsk
 maxTurns: 8
+skills:
+  - artifact-validator
 ---
 
 # Requirements Formalizer

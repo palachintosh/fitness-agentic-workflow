@@ -18,7 +18,8 @@
       "Bash",
       "Agent",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__wger__*"
     ]
   },
   "sandbox": {
@@ -29,5 +30,39 @@
       "allowWrite": [],
       "denyWrite": []
     }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/hooks/approval-gate-guard.py"],
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/hooks/no-leak-guard.py"],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/hooks/post-write-state.py"],
+            "timeout": 5
+          }
+        ]
+      }
+    ]
   }
 }

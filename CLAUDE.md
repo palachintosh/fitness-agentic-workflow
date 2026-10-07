@@ -20,7 +20,9 @@ write fitness recommendations itself.
 .claude/
 ├── commands/fitness-planner.md      # Coordinator entry point
 ├── agents/                          # Single-responsibility subagents
-├── skills/                          # Reusable workflow procedures
+├── skills/
+│   ├── artifact-validator/          # Reusable structural and citation gate
+│   └── fitness-html-theme-builder/  # Reusable final HTML rendering contract
 └── settings.json                    # Hooks and permissions
 hooks/                               # Hook implementations
 runs/<run-id>/                       # Persisted run state and artifacts
@@ -61,7 +63,7 @@ Each subagent has one responsibility and owns only its named artifact.
 | `progression-planner` | Define progression, deloads, and tracking | `progression-plan.md` |
 | `validator` | Evaluate named quality gates without rewriting artifacts | `validation.md` |
 | `plan-synthesizer` | Combine validated artifacts into one coherent plan | `approved-candidate.md` |
-| `final-renderer` | Render only an approved candidate | `fitness-plan.md` or `fitness-plan.html` |
+| `html-builder` | Render only an approved candidate as standalone HTML | `fitness-plan.html` |
 
 The coordinator may omit an optional specialist when it is irrelevant, but a
 normal run must still exercise at least five subagents. Safety review is required
@@ -80,13 +82,18 @@ requirements-formalizer
   -> validator (final candidate gate)
   -> human approval
      -> rejected: revise affected artifacts, revalidate, and ask again
-     -> approved: final-renderer
+     -> approved: html-builder
 ```
 
 Parallel work is allowed only when agents do not depend on one another's output.
 Apply the reusable structural gate immediately after every artifact is written.
 No dependent stage may consume an artifact whose gate has failed. The dedicated
 validator performs the cross-artifact domain gates shown in the graph.
+
+Artifact-producing agents preload `artifact-validator` and must apply it to
+their persisted output before reporting completion. `html-builder` preloads
+`fitness-html-theme-builder`; approval and content fidelity remain the agent's
+responsibility rather than the rendering skill's.
 
 ## Requirements Contract
 
@@ -122,7 +129,7 @@ runs/<run-id>/
 ├── validation.md
 ├── approved-candidate.md
 ├── approval.md
-├── fitness-plan.md                  # Or fitness-plan.html
+├── fitness-plan.html
 └── workflow-state.json
 ```
 
@@ -181,6 +188,24 @@ Only that normalized response changes approval status to `approved`. Any other
 response is rejection or feedback. Store it in `approval.md`, revise only the
 affected work, revalidate it, and request approval again. The final renderer and
 final output path must remain blocked while approval is missing or rejected.
+
+Record approval with these deterministic fields so the write guard can verify
+that it applies to the current validated candidate:
+
+```markdown
+- Status: approved
+- Decision: APPROVE FITNESS PLAN
+- Candidate: runs/<run-id>/approved-candidate.md
+- Candidate SHA-256: <lowercase SHA-256 of approved-candidate.md>
+- Validation mode: final_candidate
+- Validation result: pass
+```
+
+The pre-write guards reject `fitness-plan.html` when any field is missing or
+stale, and reject internal artifact filenames in the candidate or final HTML.
+The post-write hook merges successful artifact writes into
+`workflow-state.json`; agents must not claim that state persisted if the hook
+reports an update error.
 
 ## Research and MCP Rules
 
