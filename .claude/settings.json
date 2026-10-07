@@ -39,6 +39,18 @@
           {
             "type": "command",
             "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/hooks/artifact-owner-guard.py"],
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PROJECT_DIR}/hooks/state-integrity-guard.py"],
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "python3",
             "args": ["${CLAUDE_PROJECT_DIR}/hooks/approval-gate-guard.py"],
             "timeout": 5
           },

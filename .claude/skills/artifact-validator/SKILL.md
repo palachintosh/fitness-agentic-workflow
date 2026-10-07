@@ -64,3 +64,9 @@ FINDINGS:
 Use `FINDINGS: none` on pass. On failure, the owning agent may correct only its
 own artifact and must rerun this gate. Do not let dependent work proceed on a
 failed result, and do not silently weaken a check to obtain a pass.
+
+Never report `ARTIFACT_GATE: pass` until the artifact has been written, read
+back from its expected path, and checked in its persisted form. A response draft
+or intended write is not an artifact. Perform the write early enough to leave a
+turn for readback; if the turn limit interrupts before persistence, return a
+partial or blocked result rather than claiming completion.
