@@ -27,11 +27,11 @@ def deny(reason: str) -> None:
 
 def field(text: str, name: str) -> str | None:
     match = re.search(
-        rf"^\s*(?:[-*]\s*)?{re.escape(name)}\s*:\s*(.*?)\s*$",
+        rf"^\s*(?:[-*]\s*)?(?:\*\*)?{re.escape(name)}\s*:(?:\*\*)?\s*(.*?)\s*$",
         text,
         flags=re.IGNORECASE | re.MULTILINE,
     )
-    return match.group(1).strip() if match else None
+    return match.group(1).strip().strip("*").strip() if match else None
 
 
 def main() -> int:
@@ -92,6 +92,10 @@ def main() -> int:
         "approval does not record a passing validation": (field(approval_text, "Validation result") or "").lower() == "pass",
         "latest validation mode is not final_candidate": (field(validation_text, "Mode") or "").lower() == "final_candidate",
         "latest validation result is not pass": (field(validation_text, "Result") or "").lower() == "pass",
+        "validation is not bound to the current candidate SHA-256": (field(validation_text, "Candidate SHA-256") or "").lower() == expected_hash,
+        "validation report is missing named gate results": "### Gate Results" in validation_text and "FINAL-05" in validation_text,
+        "validation report still contains a failed gate": not bool(re.search(r"^\|\s*[A-Z]+-[0-9]+\s*\|\s*fail\s*\|", validation_text, flags=re.IGNORECASE | re.MULTILINE)),
+        "validation report contains retry-exhausted findings": "retry_exhausted" not in validation_text.lower(),
     }
     failures = [message for message, passed in checks.items() if not passed]
     if failures:

@@ -90,6 +90,11 @@ Apply the reusable structural gate immediately after every artifact is written.
 No dependent stage may consume an artifact whose gate has failed. The dedicated
 validator performs the cross-artifact domain gates shown in the graph.
 
+Agent completion text is not evidence that an artifact exists. The coordinator
+must read the expected persisted file before accepting success. A partial result,
+turn-limit stop, or missing file must resume or rerun the owning agent; the
+coordinator must never recreate content owned by a subagent.
+
 Artifact-producing agents preload `artifact-validator` and must apply it to
 their persisted output before reporting completion. `html-builder` preloads
 `fitness-html-theme-builder`; approval and content fidelity remain the agent's

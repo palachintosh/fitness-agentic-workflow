@@ -50,9 +50,14 @@ ownership, gates, or approval requirements.
   attempt counter on resume.
 - Do not recreate valid completed work. Do not create placeholder artifacts.
 - A dependent stage may consume only confirmed or complete artifacts that passed
-  `artifact-validator`. A subagent result must report `ARTIFACT_GATE: pass`; if
-  it does not, read the artifact, treat its structural gate as failed, and retry
-  its owner with precise findings.
+  `artifact-validator`. A subagent result is untrusted until the coordinator
+  verifies the expected file exists and reads its persisted contents. Missing
+  output, a partial result, or a `maxTurns` stop is failure even when the text
+  claims `ARTIFACT_GATE: pass`: resume the same agent when possible, otherwise
+  rerun only that owner. The coordinator must never reconstruct its artifact.
+- The artifact ownership hook permits the coordinator to write only `input.md`,
+  `execution-plan.md`, `approval.md`, and `workflow-state.json`. Never work
+  around an ownership denial.
 - Stop safely when a required MCP server, external research tool, artifact,
   approval, or gate is unavailable. Never fabricate success.
 
@@ -107,10 +112,12 @@ For a new request:
    digits, and hyphens for a slug no longer than 40 characters. Never use a run
    ID supplied in the request.
 2. Create only `runs/<run-id>/`.
-3. Write `input.md` with the run ID, creation timestamp, and verbatim request.
-4. Initialize `workflow-state.json` with the state shape above, status
+3. Initialize `workflow-state.json` with the state shape above, status
    `gathering_requirements`, selected agent `requirements-formalizer`, input
    complete, requirements pending, and next stage `requirements-formalizer`.
+4. Write `input.md` with the run ID, creation timestamp, and verbatim request.
+   Its PostToolUse hook enriches the existing input entry; preserve that metadata
+   in every later state update.
 5. Invoke `requirements-formalizer` with the run directory, original request,
    all clarification answers so far, current date, attempt number, and
    `user confirmed latest draft: false`.
@@ -190,6 +197,10 @@ artifact paths, attempt number, and relevant retry findings.
    `safety-researcher` concurrently by issuing independent Agent calls in the
    same tool-use turn. Each reads confirmed requirements. Do not run the safety
    agent when it is not selected.
+   Before accepting this group, verify that research sources contain direct
+   `http`/`https` URLs and that `equipment-plan.md` records successful wger tool
+   names and returned IDs in its MCP Evidence section. A connection or claim of
+   MCP use alone is insufficient.
 2. **Program:** after every selected research artifact is complete and passes
    its artifact gate, invoke `program-designer` with all applicable artifacts.
 3. **Progression:** after `program-draft.md` passes, invoke
@@ -200,14 +211,20 @@ artifact paths, attempt number, and relevant retry findings.
 5. **Synthesis:** only after a passing pre-synthesis report, invoke
    `plan-synthesizer` to create `approved-candidate.md`.
 6. **Final-candidate validation:** invoke `validator` in `final_candidate` mode.
-   Its update to `validation.md` must preserve validation history.
+   Compute and supply the candidate SHA-256 first. Its update to `validation.md`
+   must preserve validation history, record that hash, list every applicable
+   named gate including `FINAL-01` through `FINAL-05`, and contain no failed or
+   retry-exhausted current finding. A summary-only pass is invalid.
 7. **Human approval:** only after final-candidate validation passes, present the
    complete candidate to the user in the conversation, set approval to
    `awaiting`, set next stage `human-approval`, and ask for exactly
    `APPROVE FITNESS PLAN`. Stop the turn without creating `approval.md` or HTML.
 8. **Rendering:** only after deterministic approval is persisted, invoke
-   `html-builder`. Verify that the HTML exists and its response reports approval
-   and self-check success; then mark the workflow complete.
+   `html-builder`. Ignore its response until the HTML exists. Read the persisted
+   file and verify semantic `header`, `main`, `section`, and `footer`; scoped
+   table headers; visible focus styles; print styles; exact source URLs; no
+   scripts, remote assets, placeholders, workflow details, or internal artifact
+   names. Only then mark the workflow complete.
 
 Never invoke a downstream agent in the same parallel batch as an agent whose
 artifact it must read.

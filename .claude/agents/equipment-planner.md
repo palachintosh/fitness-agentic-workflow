@@ -4,7 +4,7 @@ description: Maps confirmed training equipment and location constraints to feasi
 tools: Read, Write, Edit, mcp__wger__*
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 mcpServers:

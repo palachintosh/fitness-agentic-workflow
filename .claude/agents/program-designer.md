@@ -4,7 +4,7 @@ description: Builds a constraint-aware weekly fitness program from confirmed req
 tools: Read, Write, Edit
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 ---

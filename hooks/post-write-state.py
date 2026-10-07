@@ -17,26 +17,26 @@ from pathlib import Path
 ARTIFACTS = {
     "input.md": ("input", "coordinator"),
     "requirements.md": ("requirements", "requirements-formalizer"),
-    "execution-plan.md": ("execution_plan", "coordinator"),
-    "exercise-research.md": ("exercise_research", "exercise-researcher"),
-    "equipment-plan.md": ("equipment_plan", "equipment-planner"),
-    "safety-research.md": ("safety_research", "safety-researcher"),
-    "program-draft.md": ("program_draft", "program-designer"),
-    "progression-plan.md": ("progression_plan", "progression-planner"),
+    "execution-plan.md": ("execution-plan", "coordinator"),
+    "exercise-research.md": ("exercise-research", "exercise-researcher"),
+    "equipment-plan.md": ("equipment-plan", "equipment-planner"),
+    "safety-research.md": ("safety-research", "safety-researcher"),
+    "program-draft.md": ("program-draft", "program-designer"),
+    "progression-plan.md": ("progression-plan", "progression-planner"),
     "validation.md": ("validation", "validator"),
-    "approved-candidate.md": ("approved_candidate", "plan-synthesizer"),
+    "approved-candidate.md": ("approved-candidate", "plan-synthesizer"),
     "approval.md": ("approval", "coordinator"),
-    "fitness-plan.html": ("fitness_plan", "html-builder"),
+    "fitness-plan.html": ("fitness-plan-html", "html-builder"),
 }
 
 
 def field(text: str, name: str) -> str | None:
     match = re.search(
-        rf"^\s*(?:[-*]\s*)?{re.escape(name)}\s*:\s*(.*?)\s*$",
+        rf"^\s*(?:[-*]\s*)?(?:\*\*)?{re.escape(name)}\s*:(?:\*\*)?\s*(.*?)\s*$",
         text,
         flags=re.IGNORECASE | re.MULTILINE,
     )
-    return match.group(1).strip() if match else None
+    return match.group(1).strip().strip("*").strip() if match else None
 
 
 def status_for(name: str, text: str) -> str:
@@ -123,6 +123,7 @@ def main() -> int:
                 "sha256": hashlib.sha256(content).hexdigest(),
                 "size_bytes": len(content),
                 "updated_at": now,
+                "gate": (field(text, "ARTIFACT_GATE") or "pending").lower(),
             }
             if attempt_text and attempt_text.isdigit():
                 entry["attempt"] = int(attempt_text)

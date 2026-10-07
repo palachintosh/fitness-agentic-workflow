@@ -4,7 +4,7 @@ description: Merges validated fitness workflow artifacts into one coherent user-
 tools: Read, Write, Edit
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 ---

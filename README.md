@@ -186,8 +186,13 @@ are complete and valid.
 
 ### Hooks
 
+- `artifact-owner-guard` prevents the coordinator or another subagent from
+  writing an artifact owned by a different agent.
+- `state-integrity-guard` rejects malformed state, duplicate JSON keys, removed
+  artifact entries, and discarded hash metadata.
 - `approval-gate-guard` blocks writes to `fitness-plan.html` until the current
-  candidate has passing final validation and matching SHA-256 approval.
+  candidate has complete named final-gate results plus matching validation and
+  approval SHA-256 values.
 - `no-leak-guard` blocks internal artifact filenames and run paths from the
   candidate and final HTML.
 - `post-write-state` merges successful artifact writes into
@@ -234,10 +239,12 @@ and remain recorded in the run state and validation report.
 ## Cost-Conscious Defaults
 
 Subagents use the `haiku` model and project settings request low effort with
-extended thinking disabled. These choices reduce usage but are not a guaranteed
-token or cost limit. Parallel agents still make separate model calls, and web or
-MCP operations may add latency. Review `.claude/settings.json` and the agent
-frontmatter before running the demonstration with a paid account.
+extended thinking disabled. Tool-heavy artifact agents allow four turns so they
+can write and read back their output instead of returning a false completion at
+the former three-turn boundary. These choices reduce usage but are not a
+guaranteed token or cost limit. Parallel agents still make separate model calls,
+and web or MCP operations may add latency. Review `.claude/settings.json` and
+the agent frontmatter before running the demonstration with a paid account.
 
 ## Reviewer Walkthrough
 

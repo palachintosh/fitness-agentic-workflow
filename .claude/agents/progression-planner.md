@@ -4,7 +4,7 @@ description: Adds measurable progression, regression, deload, and tracking rules
 tools: Read, Write, Edit
 model: haiku
 permissionMode: dontAsk
-maxTurns: 3
+maxTurns: 4
 skills:
   - artifact-validator
 ---
